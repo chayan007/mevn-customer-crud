@@ -10,7 +10,7 @@
             <router-link to="/create" class="nav-link">Create Customer</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/posts" class="nav-link">Customers</router-link>
+            <router-link to="/users" class="nav-link">Customers</router-link>
           </li>
         </ul>
       </nav>

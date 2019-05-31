@@ -21,7 +21,7 @@
                 <td>{{ user.name }}</td>
                 <td>{{ user.email }}</td>
                 <td><router-link :to="{name: 'edit', params: { id: user._id }}" class="btn btn-primary">Edit</router-link></td>
-                <td><button class="btn btn-danger">Delete</button></td>
+                <td><button class="btn btn-danger" @click.prevent="deleteUser(user._id)">Delete</button></td>
             </tr>
             </tbody>
         </table>
@@ -32,7 +32,7 @@
     export default {
         data() {
             return {
-                posts: []
+                users: []
             }
         },
         created() {
@@ -40,6 +40,15 @@
             this.axios.get(uri).then(response => {
                 this.users = response.data;
             });
+        },
+        methods: {
+            deleteUser(id)
+            {
+                let uri = `http://localhost:4000/users/delete/${id}`;
+                this.axios.delete(uri).then(response => {
+                    this.users.splice(this.users.indexOf(id), 1);
+                });
+            }
         }
     }
 </script>
