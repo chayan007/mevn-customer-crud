@@ -1,4 +1,4 @@
-<<<template>
+<template>
   <div id="app">
     <div class="container">
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
