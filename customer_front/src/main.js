@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import VueRouter from 'vue-router'
+import VueAxios from 'vue-axios';
+import axios from 'axios';
 
 import HomeComponent from './components/HomeComponent.vue';
 import CreateComponent from './components/CreateComponent.vue';
@@ -10,8 +12,9 @@ import EditComponent from './components/EditComponent.vue';
 
 
 
-Vue.config.productionTip = false
-Vue.use(VueRouter)
+Vue.config.productionTip = false;
+Vue.use(VueRouter);
+Vue.use(VueAxios, axios);
 
 const routes = [
     {
@@ -25,8 +28,8 @@ const routes = [
         component: CreateComponent
     },
     {
-        name: 'posts',
-        path: '/posts',
+        name: 'users',
+        path: '/users',
         component: IndexComponent
     },
     {

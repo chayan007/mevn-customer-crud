@@ -1,7 +1,7 @@
 <template>
     <div class="row justify-content-center">
         <h1>Create A Post</h1>
-        <form @submit.prevent="addPost">
+        <form @submit.prevent="addUser">
                     <div class="form-group">
                         <label>User Name:</label>
                         <input type="text" class="form-control" v-model="user.name">
@@ -26,8 +26,11 @@
             }
         },
         methods: {
-            addPost(){
-                console.log(this.user);
+            addUser(){
+                let uri = 'http://localhost:4000/users/add';
+                this.axios.post(uri, this.user).then(() => {
+                    this.$router.push({name: 'users'});
+                });
             }
         }
     }

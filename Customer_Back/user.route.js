@@ -15,7 +15,7 @@ userRoutes.route('/add').post(function (req, res) {
 });
 
 userRoutes.route('/').get(function (req, res) {
-    User.find(function(err, users){
+    User.find({}, function(err, users){
         if(err){
             res.json(err);
         }
